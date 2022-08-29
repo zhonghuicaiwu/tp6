@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>{$info.title}-{$title}_{$system.name}</title>
+    <meta name="keywords" content="{$keywords}"/>
+    <meta name="description" content="{$description}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{$public}img/favicon.ico"/>
+    {include file="common/css"/}
+    {include file="common/js"/}
+</head>
+<body>
+{include file="common/header"/}
+<script type="text/javascript">
+    document.getElementById("menu1").className = "cur";
+</script>
+{include file="common/banner"/}
+
+<div class="zy_top">
+    <div class="zy_top_center gy">
+        <div class="zy_top_left" style="width:540px;">
+            <div class="zy_top_left_left03">NEWS<span> CENTER ・</span></div>
+            <div class="zy_top_left_right_new" style="width:100px;">
+                <div class="zy_top_left_right01">新闻中心</div>
+                <div class="zy_top_left_right02">关注众穗 关注资讯</div>
+            </div>
+        </div>
+        <div class="zy_top_right" style="width:630px;">
+            <div class="wz"><img src="{$public}img/wz_icon.jpg" alt="新闻中心" />当前位置：
+                <a href="/" title="首页">首页</a> >
+                <a href="/">新闻中心</a> > {$title}</div>
+            <div class="zy_case_fl zy_case_fl02">
+                <ul>
+                    {tp:nav name='nav' id="$cate['topid']"}
+                    <li {eq name="$cate.id" value="$nav.id"} class="flon"{/eq}><a href="{$nav.url}">{$nav.cate_name}</a></li>
+                    {/tp:nav}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="new_show gy">
+    <div class="new_show_left">
+        <div class="new_show_left_top">
+            <div class="sx02">
+
+            </div>
+
+            <h1>{$info.title}</h1>
+            <p>发表日期：{$info.create_time|date="Y-m-d H:i:s"}&nbsp;&nbsp;&nbsp;&nbsp;文章编辑：{$info.author}&nbsp;&nbsp;&nbsp;&nbsp;浏览次数：{$info.hits}
+            </p>
+        </div>
+        <div class="new_show_text">
+            {$info.content|raw}
+            <br>如没特殊注明，文章均为众穗财务管理原创,转载请注明来源
+            <div class="notice"></div>
+        </div>
+        <div class="zy_left_show_sx">
+            <div class="fanhui">
+                <div class="fanhui_left"><img src="{$public}img/fhlb_icon.jpg" /></div>
+                <div class="fanhui_right">
+                    <a href="/index/news.html">返回列表</a>
+                </div>
+            </div>
+
+            上一篇：  {tp:prev len='10'/}
+            下一篇： {tp:next len='10'/}
+        </div>
+    </div>
+    {include file="common/hot"/}
+</div>
+
+
+
+{include file="common/footer"/}
+
+</body>
+</html>

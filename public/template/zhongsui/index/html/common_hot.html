@@ -1,0 +1,15 @@
+<div class="new_show_right">
+    <div class="new_show_right_top">相关新闻</div>
+    <ul>
+
+        {tp:list id="4" where="image <> '' " name="list" limit="5" order="id desc"}
+        <li>
+            <h1>{$list.title}</h1>
+            <h2>日期：{$list.create_time|date="Y-m-d"} 浏览次数：{$list.hits}</h2>
+            <p>
+                <a href="{$list.url}">{$list.summary}</a>
+            </p>
+        </li>
+        {/tp:list}
+    </ul>
+</div>

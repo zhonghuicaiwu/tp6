@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{$title}_{$system.name}</title>
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+    <link rel="shortcut icon" type="image/x-icon" href="{$public}img/favicon.ico" />
+    {include file="common/css"/}
+    {include file="common/js"/}
+</head>
+<body>
+{include file="common/header"/}
+
+<script type="text/javascript">
+    document.getElementById("menu1").className = "cur";
+</script>
+
+{include file="common/banner"/}
+
+<div id="content">
+    <div class="wrapper_con wrap clearfix">
+        <div class="wrapper_left fl">
+            <div class="title">
+                <div class="t_e">SERVICE</div>
+                <div class="line"></div>
+                <div class="t_c">{$title}</div>
+            </div>
+
+            <ul id="num">
+                {tp:nav name='nav' limit='10'}
+                <li><a  href="{$nav.url}">{$nav.cate_name}</a></li>
+                {/tp:nav}
+            </ul>
+
+            <div class="info">
+                <div class="tel">
+                    <h5><i></i><span>热线电话</span></h5>
+                    <h2>{$system.mobile_phone}</h2>
+                </div>
+                <div class="share">
+                    <a href="" class="qq" target="_blank"></a>
+                    <a href="" class="xl" target="_blank"></a>
+                    <a href="" class="wx" target="_blank"></a>
+                    <a href="" class="bk" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper_right fr">
+            <div class="about_wrapper">
+                <div class="t_con auto"> <span class="ab_tit_t">
+              <h2> {$info.title}</h2>
+
+              {$info.content|raw}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{include file="common/footer"/}
+</body>
+</html>

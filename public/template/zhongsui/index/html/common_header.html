@@ -1,0 +1,66 @@
+<div class="header">
+    <div class="headertop_one">
+        <div class="container1">
+            <div class="top_one">
+                <ul class="top_links">
+                    <li><i><img src="{$public}img/icon_add.jpg"></i><a href="/index/gongsizhuce.html">{$system.address}</a></li>
+                    <li><i><img src="{$public}img/icon_tel.jpg"></i><strong><a style="color:#f65251;">{$system.mobile_phone}</a></strong></li>
+                </ul>
+            </div>
+            <div class="top_one_nav">
+                <ul class="header_nav_ico">
+                    <li><a href="/index/gongsizhuce.html" class="googleplus"><i class="icon-mobile"></i><span>金华公司注册</span></a></li>
+                    <li><a href="/index/hkzhuce.html" class="dribbble"><i class="icon-cart"></i><span>香港公司注册</span></a></li>
+                    <li><a href="/index/shangbiao.html" class="twitter"><i class="icon-html5"></i><span>商标注册</span></a></li>
+                    <li><a href="/index/dailijizhang.html" class="facebook"><i class="icon-globe"></i><span>代理记账</span></a></li>
+                    <li><a href="/index/news.html" class="skype"><i class="icon-address-book"></i><span>新闻中心</span></a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--nav start-->
+    <div class="top_main">
+        <div class="top_logo">
+            <a href="/"><img src="{$system.logo}"></a>
+        </div>
+        <div class="dh_bg">
+            <ul>
+                <li id="menu1" ><a href="/"><i class="img dh_01"></i><span>网站首页</span></a></li>
+                {tp:nav name='nav' limit='10'}
+                <li  id="menu{$i+2}"><a href="{$nav.url}"><i class="img dh_0{$i+1}"></i><span>{$nav.cate_name}</span></a></li>
+                {/tp:nav}
+            </ul>
+
+            <div class="dh_bg_cur">
+                <img src="{$public}img/nav_cur.png">
+            </div>
+
+            <div class="two_nav_box">
+                {tp:nav name='nav' limit='10'}
+                <div class="two_nav">
+                    <div>
+                        {if $nav.sub}
+                        {volist name="$nav.sub" id="v"}
+                        <dl>
+                            <i></i>
+                            <dt><a href="{$v.url}">{$v.cate_name}</a></dt>
+                        </dl>
+                        {/volist}
+                        {/if}
+                    </div>
+                </div>
+                {/tp:nav}
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <!--nav end -->
+
+</div>
+</header>
+
+
